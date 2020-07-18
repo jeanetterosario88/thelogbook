@@ -1,18 +1,21 @@
 <h3><%=@user.username%> Entries: </h3>
 
-<h4><a href="/new">Create New Entry</a></h4>
+<h4><a href="entries/new">Create New Entry</a></h4>
 
- <%@entries.each_with_index do |entry, index| %>
+ <% @entries.each_with_index do |entry, index| %>
    <h4>Entry #<%= index + 1 %></h4>
    <h5><%=entry.type%><br>
-    <%=entry.date%a><br>
-    <%=entry.rating%><br>
-    <%=entry.content%></h5>
-    <h4><a href="/edit/<%=entry.id%>">Edit Entry</a></h4>
-    <h4><a href="/delete/<%=entry.id%>">Delete Entry</a></h4>
+    Date: <%=entry.date%a><br>
+    Rating: <%=entry.rating%><br>
+    Content: <%=entry.content%><br>
+    Contact: <%=entry.contact%></h5>
+    <h5><a href="entries/edit/<%=entry.id%>">Edit Entry</a><br>
+    <a href="entries/delete/<%=entry.id%>">Delete Entry</a></h5>
     
 
  <%end%>
 <br>
 <br>
-<a href="/logout">Log Out</a>
+<form action="/logout" method="post">
+<input type="submit" value= "Logout" name="logout" ><br>
+</form>

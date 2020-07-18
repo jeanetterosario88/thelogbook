@@ -67,18 +67,16 @@ class EntriesController < ApplicationController
         end
 
         delete "/entries/:id/delete" do
-            if logged_in?
-              @entry = Entry.find(params[:id])
-              if @entry && @entry.user == current_user
-                  @entry.delete
-                  redirect to '/entries'
-              end
+         if logged_in?
+             @entry = Entry.find(params[:id])
+             if @entry && @entry.user == current_user
+                    @entry.delete
+                    redirect to '/entries'
+            end
             else
                 redirect to '/login'
             end 
-            end
+        end
  
-
-
 
 end

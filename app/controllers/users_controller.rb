@@ -15,11 +15,11 @@ class UsersController < ApplicationController
 
      post '/signup' do
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
-            redirect to '/error' #error.erb aka Please enter a valid username, email and password.
+            redirect to '/error' #error.erb aka Please fill out enter form.
         else
             @user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
             session[:user_id] = @user_id
-            redirect to '/entries' #Maybe a welcome page, actually
+            redirect to '/entries'
         end
     end
 
@@ -41,9 +41,15 @@ class UsersController < ApplicationController
           end
         end
 
-
+        get '/logout' do
+            if !logged_in?
+              redirect to '/'
+            else
+              session.clear
+              redirect to "/login"
+            end
+          end
     
-
 
     
 end

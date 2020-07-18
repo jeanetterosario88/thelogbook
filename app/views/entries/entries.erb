@@ -1,8 +1,9 @@
+
 <h3><%=@user.username%> Entries: </h3>
 
 <h4><a href="entries/new">Create New Entry</a></h4>
 
- <% @entries.each_with_index do |entry, index| %>
+ <% @user.entries.each_with_index do |entry, index| %>
    <h4>Entry <%= index + 1 %></h4>
    <h5>Category: <%=entry.category%><br>
     Date: <%=entry.date%><br>

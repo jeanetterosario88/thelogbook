@@ -4,8 +4,8 @@
 
  <% @entries.each_with_index do |entry, index| %>
    <h4>Entry #<%= index + 1 %></h4>
-   <h5><%=entry.type%><br>
-    Date: <%=entry.date%a><br>
+   <h5>Type: <%=entry.type%><br>
+    Date: <%=entry.date%><br>
     Rating: <%=entry.rating%><br>
     Content: <%=entry.content%><br>
     Contact: <%=entry.contact%></h5>

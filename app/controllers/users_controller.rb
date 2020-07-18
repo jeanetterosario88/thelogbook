@@ -23,6 +23,25 @@ class UsersController < ApplicationController
         end
     end
 
+    get '/login' do
+        if !logged_in? #if not logged in
+            erb :'login'
+        else
+            redirect to '/entries'
+      end
+     end
+
+      post '/login' do
+        @user = User.find_by(:username => params[:username])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+            redirect to '/entries'
+          else
+            redirect to '/error'
+          end
+        end
+
+
     
 
 

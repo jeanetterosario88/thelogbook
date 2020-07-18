@@ -1,9 +1,11 @@
 class CreateEntries < ActiveRecord::Migration[6.0]
   def change
     create_table :entries do |t|
-      t.string :rating
-      t.string :content
+      t.string :type
+      t.string :date
+      t.integer :rating
       t.string :contact
+      t.string :content
       t.integer :user_id
     end
   end

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_07_18_165651) do
 
   create_table "entries", force: :cascade do |t|
-    t.string "type"
+    t.string "category"
     t.string "date"
     t.integer "rating"
     t.string "content"

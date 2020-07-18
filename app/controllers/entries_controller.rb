@@ -20,7 +20,7 @@ class EntriesController < ApplicationController
       end
     
       post '/entries' do #after user makes a new entry
-        @entry = Entry.new(params)
+        @entry = Entry.create(params)
         @user = current_user
         if logged_in? && @entry.content != "" && @entry.save
             @user.entries << @entry
@@ -40,7 +40,7 @@ class EntriesController < ApplicationController
         end
       end
     
-      get '/entries/:id/edit' do
+      get '/entries/edit/:id' do
         if logged_in?
             @user = current_user
             @entry = Entry.find(params[:id])
@@ -58,7 +58,7 @@ class EntriesController < ApplicationController
       patch "/entries/:id" do
         @entry = Entry.find(params[:id])
             if logged_in? && (!params[:content].blank? || !params[:contact].blank? || !params[:rating].blank?) #if one of these is not blank, aka filled out
-                @entry.update(type: params[:type], date: params[:date], rating: params[:rating], content: params[:content], contact: params[:contact])
+                @entry.update(category: params[:category], date: params[:date], rating: params[:rating], content: params[:content], contact: params[:contact])
                 @entry.save
                 redirect to "/entries/#{@entry.id}"
             else
@@ -66,7 +66,7 @@ class EntriesController < ApplicationController
             end
         end
 
-        delete "/entries/:id/delete" do
+        get "/entries/delete/:id" do
          if logged_in?
              @entry = Entry.find(params[:id])
              if @entry && @entry.user == current_user

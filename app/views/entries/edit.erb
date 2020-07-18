@@ -1,32 +1,32 @@
   
 <h3>User: <%= @user.username %></h3>
 
-<form action="/entries/<%=@entry.id%>" method="Post">
+<form action='/entries/<%=@entry.id%>' method="post">
 <input type="hidden" name="_method" value="patch">
 
 <h3>Edit Entry:</h3>
-       <h4> Type: <input type="text" name="type" value="<%= @entry.type %>"><br>
+       <h4> Category: <input type="text" name="category" value="<%= @entry.category %>"><br>
         Date: <input type="text" name="date" value="<%= @entry.date %>"><br>
-        How'd It Go? (Rate)<br> 
-            <input type="radio" name="1" <%= if @entry.rating = 1 %> checked <%end%>>
+        How Did It Go? (Rate)<br> 
+            <input type="radio" name="rating" value="1" <% if @entry.rating == 1 %> checked <%end%>>
             <label for="1">1</label> 
-            <input type="radio" name="2" <%= if @entry.rating = 2 %> checked <%end%>>
+            <input type="radio" name="rating" value="2" <% if @entry.rating == 2 %> checked <%end%>>
             <label for="2">2
-            <input type="radio" name="3" <%= if @entry.rating = 3 %> checked <%end%>>
+            <input type="radio" name="rating" value="3" <% if @entry.rating == 3 %> checked <%end%>>
             <label for="3">3</label>
-            <input type="radio" name="4" <%= if @entry.rating = 4 %> checked <%end%>>
+            <input type="radio" name="rating" value="4" <% if @entry.rating == 4 %> checked <%end%>>
             <label for="4">4</label>
-            <input type="radio" name="5" <%= if @entry.rating = 5 %> checked <%end%>>
+            <input type="radio" name="rating" value="5" <% if @entry.rating == 5 %> checked <%end%>>
             <label for="5">5</label>
-            <input type="radio" name="6" <%= if @entry.rating = 6 %> checked <%end%>>
+            <input type="radio" name="rating" value="6" <% if @entry.rating == 6 %> checked <%end%>>
             <label for="6">6</label>
-            <input type="radio" name="7" <%= if @entry.rating = 7 %> checked <%end%>>
+            <input type="radio" name="rating" value="7" <% if @entry.rating == 7 %> checked <%end%>>
             <label for="7">7</label>
-            <input type="radio" name="8" <%= if @entry.rating = 8 %> checked <%end%>>
+            <input type="radio" name="rating" value="8"<% if @entry.rating == 8 %> checked <%end%>>
             <label for="8">8</label>
-            <input type="radio" name="9" <%= if @entry.rating = 9 %> checked <%end%>>
+            <input type="radio" name="rating" value="9" <% if @entry.rating == 9 %> checked <%end%>>
             <label for="9">9</label>
-            <input type="radio" name="10" <%= if @entry.rating = 10 %> checked <%end%>>
+            <input type="radio" name="rating" value="10" <% if @entry.rating == 10 %> checked <%end%>>
             <label for="10">10</label><br>
         Content: <input type="text" name="content" value="<%= @entry.content %>"><br>
         Contact: <input type="text" name="contact" value="<%= @entry.contact%>"><br><br>

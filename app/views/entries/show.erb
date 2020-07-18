@@ -1,20 +1,18 @@
-<h4>Entry #<%= entry.id %></h4>
+<a href="/entries">View All</a><br>
 
-<h5><a href="entries/edit/<%=entry.id%>"><br>Edit Entry</a><br><br>
-Type: <%= entry.type %><br>
- Date: <%= entry.date %><br>
- Rating: <%= entry.rating %><br>
- Content: <%= entry.content %><br>
- Contact: <%= entry.contact %><br><br>
+<h4>Entry #<%= @entry.id %></h4>
 
-<form action="/entries/<%=@entry.id%>/delete" method="post">
-<input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete"><br><br><br>
+<h4>
+  Category: <%= @entry.category %><br>
+ Date: <%= @entry.date %><br>
+ Rating: <%= @entry.rating %><br>
+ Content: <%= @entry.content %><br>
+ Contact: <%= @entry.contact %><br><br>
 
+<a href="/entries/edit/<%=@entry.id%>"><br>Edit</a> or 
+<a href="/entries/delete/<%=@entry.id%>"> Delete</a> <br><br><br>
 
-</form>
-
-
-<form action="/logout" method="get">
+  
+<form action="/logout" method="post">
 <input type="submit" value="Log Out">
-</form>
+</form></h4>

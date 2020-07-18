@@ -1,7 +1,7 @@
 class CreateEntries < ActiveRecord::Migration[6.0]
   def change
     create_table :entries do |t|
-      t.string :type
+      t.string :category
       t.string :date
       t.integer :rating
       t.string :content

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
       get '/signup' do
         if !logged_in? #if not logged in
-            erb :'signup'
+            erb :'users/signup'
         else #if logged in
             @user == current_user
             redirect to '/entries'
@@ -20,12 +20,12 @@ class UsersController < ApplicationController
             @user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
             session[:user_id] = @user_id
             redirect to '/entries'
-        end
+      end
     end
 
     get '/login' do
         if !logged_in? #if not logged in
-            erb :'login'
+            erb :'users/login'
         else
             redirect to '/entries'
       end
@@ -37,11 +37,11 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect to '/entries'
           else
-            redirect to '/error'
+            redirect to 'users/error'
           end
         end
 
-        get '/logout' do
+        post '/logout' do
             if !logged_in?
               redirect to '/'
             else
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
               redirect to "/login"
             end
           end
-    
+
 
     
 end

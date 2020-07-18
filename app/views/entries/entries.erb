@@ -3,16 +3,18 @@
 <h4><a href="entries/new">Create New Entry</a></h4>
 
  <% @entries.each_with_index do |entry, index| %>
-   <h4>Entry #<%= index + 1 %></h4>
-   <h5>Type: <%=entry.type%><br>
+   <h4>Entry <%= index + 1 %></h4>
+   <h5>Category: <%=entry.category%><br>
     Date: <%=entry.date%><br>
     Rating: <%=entry.rating%><br>
     Content: <%=entry.content%><br>
     Contact: <%=entry.contact%></h5>
     <h5><a href="entries/edit/<%=entry.id%>">Edit Entry</a><br>
-    <a href="entries/delete/<%=entry.id%>">Delete Entry</a></h5>
-    
 
+    <form action="/entries/<%=entry.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <a href="entries/delete/<%=entry.id%>">Delete Entry</a></h5>
+    </form>
  <%end%>
 <br>
 <br>

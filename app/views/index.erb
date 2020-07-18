@@ -1,0 +1,9 @@
+<h4> Welcome 
+    <% if @user.logged_in? %>    
+        <=% @user.username %> </h4>
+        <form action="/logout" method="post">
+        <input type="submit" name="logout" >
+      </form>
+    <% else %>    
+    <h5> Please <a href="/signup">Sign Up</a> or <a href="/login">Log In</a> to continue. </h5>
+    <% end %>

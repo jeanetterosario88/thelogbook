@@ -78,5 +78,8 @@ class EntriesController < ApplicationController
             end 
         end
  
+        def validate_user(username) #returns 0 if true, #returns nil otherwise, so made this using a boolean operator
+          (username =~ /\A[a-z0-9_]{4,16}\Z/) == 0
+        end
 
 end

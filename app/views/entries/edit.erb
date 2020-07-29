@@ -1,5 +1,5 @@
-  
 <h3>User: <%= @user.username %></h3>
+
 
 <form action='/entries/<%=@entry.id%>' method="post">
 <input type="hidden" name="_method" value="patch">
@@ -32,5 +32,3 @@
         Contact: <input type="text" name="contact" value="<%= @entry.contact%>"><br><br>
 
         <input type="submit" value="Submit"></h4>
-
-   </form>

@@ -35,6 +35,10 @@ class ApplicationController < Sinatra::Base
             (username =~ /\A[a-z0-9_]{4,16}\Z/) == 0
         end
 
+        def input_error
+            logged_in? && (!params[:content].blank? || !params[:contact].blank? || !params[:rating].blank?) 
+        end
+
     end
 
 

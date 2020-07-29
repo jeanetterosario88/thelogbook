@@ -15,10 +15,10 @@ class UsersController < ApplicationController
 
      post '/signup' do
         if !validate_user(params[:username]) || params[:email] == "" || params[:password] == "" || User.all.find_by(:username => params[:username])
-          redirect to '/error'
+          redirect to 'users/error'
         else
             @user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
-            session[:user_id] = @user_id
+            session[:user_id] = @user.id
             redirect to '/entries'
         end
     end
@@ -33,8 +33,8 @@ class UsersController < ApplicationController
 
       post '/login' do
         @user = User.find_by(:username => params[:username])
-        if @user && @user.authenticate(params[:password])
-            session[:user_id] = @user.id
+        if @user && @user.authenticate(params[:password])     #if @user exists
+            session[:user_id] = @user.id #id is sessions
             redirect to '/entries'
         else
             redirect to 'users/error'
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
              (username =~ /\A[a-z0-9_]{4,16}\Z/) == 0
          end
 
-         get '/error' do
+         get '/users/error' do
             erb :'users/error'
          end
 

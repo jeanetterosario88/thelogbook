@@ -33,8 +33,8 @@ class EntriesController < ApplicationController
     get "/entries/:id" do
       if logged_in?
         @user = current_user
-            if Entry.find_by_id(params[:id])
-              @entry = Entry.find_by_id(params[:id])
+        @entry = Entry.find_by_id(params[:id])
+            if @entry && @entry.user == @user
               erb :'/entries/show'
             else
               erb :'/entries/entries'

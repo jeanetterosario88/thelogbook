@@ -51,9 +51,9 @@ class UsersController < ApplicationController
           end
 
             #"match operator" and can be used to match a string against a regular expression.
-         def validate_user(username) #returns 0 if true, #returns nil otherwise, so made this using a boolean operator
-             (username =~ /\A[a-z0-9_]{4,16}\Z/) == 0
-         end
+        #  def validate_user(username) #returns 0 if true, #returns nil otherwise, so made this using a boolean operator
+        #      (username =~ /\A[a-z0-9_]{4,16}\Z/) == 0
+        #  end
 
          get '/users/error' do
             erb :'users/error'

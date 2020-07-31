@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    configure do
+    
+  configure do
         enable :sessions
         set :session_secret, "thesecret"
       end
@@ -24,25 +25,22 @@ class UsersController < ApplicationController
             end
       end
 
-      get '/edit_user' do
-        erb :edit
+      get '/users/edit_user' do
+        erb :'users/edit_user'
       end
 
-      patch '/edit_user' do
-        @user = User.find_by(username: params[username])
-              if logged_in?
-                  @user = current_user
-                    if @user.valid?
-                        @user.update(username: params[:username], email: params[:email], password: params[:password])
-                        @user.save
-                        redirect to "/entries"
-                    else
-                        flash[:error] = @user.errors.full_messages.join(". ")
-                        redirect to "/edit_user"
-                    end
-              else
-                redirect to '/'
-              end
+      patch '/users/edit_user' do
+        @user = User.find_by(:username => params[:username])
+        # binding.pry
+            if @user && logged_in?
+                @user.update(username: params[:username], email: params[:email], password: params[:password])
+                if @user.save
+                  redirect to "users/edit_user"
+                else
+                  flash[:error] = @user.errors.full_messages.join(". ")
+                  redirect to "users/edit_user"
+                end
+            end
         end
 
 

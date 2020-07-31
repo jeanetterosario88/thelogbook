@@ -14,10 +14,7 @@ class UsersController < ApplicationController
      end
 
       post '/signup' do
-        # if !validate_user(params[:username]) || params[:email] == "" || params[:password] == "" || User.all.find_by(:username => params[:username])
-        #   redirect to 'users/error'
-        # else
-            @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+          @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
             if @user.save
               session[:user_id] = @user.id
               redirect to '/entries'
@@ -25,10 +22,30 @@ class UsersController < ApplicationController
               flash[:error] = @user.errors.full_messages.join(". ")
               redirect to '/signup'
             end
-    end
+      end
 
-    #get edit
-    #patch edit
+      get '/edit_user' do
+        erb :edit
+      end
+
+      patch '/edit_user' do
+        @user = User.find_by(username: params[username])
+              if logged_in?
+                  @user = current_user
+                    if @user.valid?
+                        @user.update(username: params[:username], email: params[:email], password: params[:password])
+                        @user.save
+                        redirect to "/entries"
+                    else
+                        flash[:error] = @user.errors.full_messages.join(". ")
+                        redirect to "/edit_user"
+                    end
+              else
+                redirect to '/'
+              end
+        end
+
+
 
 
 end

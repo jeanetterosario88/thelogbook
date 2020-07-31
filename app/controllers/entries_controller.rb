@@ -49,7 +49,7 @@ class EntriesController < ApplicationController
           @user = current_user
           @entry = Entry.find(params[:id])
           if @user.entries.include?(@entry)
-          erb :'entries/edit'
+              erb :'entries/edit'
           else
               redirect to '/entries'
           end

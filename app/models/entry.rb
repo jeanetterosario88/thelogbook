@@ -7,14 +7,10 @@ class Entry < ActiveRecord::Base
     validates :content, presence: true 
     validates :contact, presence: true
 
-    # format: { /(^(0?[1-9]|1[0-2])/(0?[1-9]|1[0-9]|2[0-9]|3[01])/\d{4}$/ }
+    # date -- format: { /(^(0?[1-9]|1[0-2])/(0?[1-9]|1[0-9]|2[0-9]|3[01])/\d{4}$/ }
 
 
 end
-
-
-
-
 
 
 

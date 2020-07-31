@@ -1,6 +1,11 @@
 
 <h3><%=@user.username%> Entries: </h3>
 
+<h3><a href="entries/edit/<%=entry.id%>">Edit Username: </a><br><%=@user.username%></h3>
+<h3><a href="entries/edit/<%=entry.id%>">Edit Email Address: </a><br><%=@user.username%><%=@user.email%></h3> 
+<h3><a href="entries/edit/<%=entry.id%>">Edit Password</a><br> 
+
+
 <h4><a href="entries/new">Create New Entry</a></h4>
 
  <% @user.entries.each_with_index do |entry, index| %>

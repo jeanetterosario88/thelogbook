@@ -1,3 +1,17 @@
+  
+<% if @entry.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+  <ul>
+  <% @entry.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+  
+  
   <form action='/entries' method="post">
   Category:
   <input type="text" name="category" placeholder="e.g. Musical Audition"><br>

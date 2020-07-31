@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
           length: { minimum: 4, maximum: 16 },
           uniqueness: true
 
-    validates :email 
+    validates :email,
         presence: true
 
     validates :password, 
@@ -15,3 +15,4 @@ class User < ActiveRecord::Base
 
 
 end
+

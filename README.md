@@ -1,4 +1,4 @@
-The Logbook aka How'd It Go?
+THE LOGBOOK aka How'd It Go?
 
 
 INTRODUCTION

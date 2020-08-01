@@ -13,7 +13,7 @@ OVERVIEW
 
 This project builds the The Logbook aka The How'd It Go?: a site where a person can keep track of important interactions such as job interviews, auditions, and networking events.
 
-This application implements two classes: Entry and User. A user cannot take any actions outside of signing up, unless they are logged in. Once logged in, Once a user is logged in, they can read, edit, create and delete their entries, and then log out. 
+This application implements two classes: Entry and User. A user cannot take any actions outside of signing up, unless they are logged in. Once logged in, a user can edit their login credentials. While logged in, a user can read, edit, create and delete their entries, and then log out. 
 
 
 DEVELOPMENT

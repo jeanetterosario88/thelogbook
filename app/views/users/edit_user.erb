@@ -2,10 +2,10 @@
 
 <h3> Edit Credentials: </h3>
 
-<h3 style="color:blue;">
+<h2 style="color:blue;">
 <% if flash[:error] == "Success!" %>
 <%= flash[:error] %>
- Go Back To Your <a href="/entries">ENTRIES</a></h3>
+ Go Back To Your <a href="/entries">ENTRIES</a></h2>
 <% else %>
 <h3 style="color:red;">
 <%= flash[:error] %>
@@ -15,9 +15,9 @@
 <input type="hidden" name="_method" value="patch">
 <h4> 
 
-Username: <input type="text" name="username" placeholder="<%=@user.username%>">
-Email: <input type="text" name="email" placeholder="<%=@user.email%>">
-Password: <input type="text" name="password"><br><br><br>
+New Username: <input type="text" name="username" placeholder="<%=@user.username%>"><br><br>
+New Email: <input type="text" name="email" placeholder="<%=@user.email%>"><br><br>
+New Password: <input type="text" name="password"><br><br><br>
 
 <input type="submit" value="Submit"></h4>
 </form><br><br><br><br>

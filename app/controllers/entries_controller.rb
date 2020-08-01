@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
       end
     end
   
-    post '/entries' do #after user makes a new entry
+    post '/entries' do
       @entry = Entry.create(params)
       @user = current_user
       if logged_in? && @entry.content != "" && @entry.save
@@ -48,12 +48,12 @@ class EntriesController < ApplicationController
       if logged_in?
           @user = current_user
           @entry = Entry.find(params[:id])
-          if @user.entries.include?(@entry)
-              erb :'entries/edit'
-          else
-              redirect to '/entries'
-          end
-      else
+            if @user.entries.include?(@entry)
+                erb :'entries/edit'
+            else
+                redirect to '/entries'
+            end
+        else
             redirect to '/login'
         end
       end
@@ -66,9 +66,9 @@ class EntriesController < ApplicationController
               @entry.update(category: params[:category], date: params[:date], rating: params[:rating], content: params[:content], contact: params[:contact])
               @entry.save
               redirect to "/entries/#{@entry.id}"
-          else
+            else
               redirect to "/entries/edit/#{@entry.id}"
-          end
+            end
         end
       end
 
@@ -78,10 +78,10 @@ class EntriesController < ApplicationController
            if @entry && @entry.user == current_user
                   @entry.delete
                   redirect to '/entries'
-          end
-          else
+            else
               redirect to '/login'
-          end 
+            end 
+        end
       end
 
      

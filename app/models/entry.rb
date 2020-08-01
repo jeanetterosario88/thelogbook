@@ -7,12 +7,10 @@ class Entry < ActiveRecord::Base
     validates :content, presence: true 
     validates :contact, presence: true
 
-    # date -- format: { /(^(0?[1-9]|1[0-2])/(0?[1-9]|1[0-9]|2[0-9]|3[01])/\d{4}$/ }
-
 
 end
 
-
+# date -- format: { ^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$ }
 
 # ^                              #Beginning of expression
 # (                              #Beginning of "Month Group"

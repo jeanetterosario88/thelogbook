@@ -1,5 +1,13 @@
 The Logbook aka How'd It Go?
 
+
+INTRODUCTION
+
+This project builds the The Logbook aka The How'd It Go?: a site where a person can keep track of important interactions such as job interviews, auditions, and networking events. Overall, this application is an efficient tool to jot down an event's type, date, and contacts, and store this information for future reference. A person is also able to rate the event and describe what occurred. 
+
+
+OVERVIEW
+
 This is a full scale Sinatra application that uses:
 SQLITE
 ActiveRecord
@@ -8,12 +16,7 @@ Sessions
 Login/Logout
 HTML5
 
-
-OVERVIEW
-
-This project builds the The Logbook aka The How'd It Go?: a site where a person can keep track of important interactions such as job interviews, auditions, and networking events.
-
-This application implements two classes: Entry and User. A user cannot take any actions outside of signing up, unless they are logged in. Once logged in, a user can edit their login credentials. While logged in, a user can read, edit, create and delete their entries, and then log out. 
+This application implements two classes: Entry and User. A user cannot take any actions outside of signing up, unless they are logged in. While logged in, a user can read, edit, create and delete entries, and then log out.
 
 
 DEVELOPMENT
@@ -38,7 +41,7 @@ $ tux
 FUTURE IMPROVEMENTS
 
 Add confirm password during sign up
-Validate date format: mm/dd/yyyy
+Validate date format to mm/dd/yyyy
 
 
 CONTRIBUTING

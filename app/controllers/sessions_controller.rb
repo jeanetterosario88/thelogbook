@@ -15,16 +15,16 @@ class SessionsController < ApplicationController
 
       post '/login' do
         @user = User.find_by(:username => params[:username])
-        if @user && @user.authenticate(params[:password])     #if @user exists
-            session[:user_id] = @user.id #id is sessions
+        if @user && @user.authenticate(params[:password])     #if @user exists & password correct
+            session[:user_id] = @user.id #id - sessions
             redirect to '/entries'
         elsif @user == nil
-            flash[:error] = "That username does not exist."
+            flash[:error] = "Please enter a valid username."
             redirect to '/login'
         elsif @user.authenticate(params[:password]) == false
-            flash[:error] = "Please re-type your password."
+            flash[:error] = "Incorrect password. Please try again."
             redirect to '/login'
-
+ 
         end
       end
 

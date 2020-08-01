@@ -62,9 +62,8 @@ class EntriesController < ApplicationController
       @entry = Entry.find(params[:id])
           if logged_in?
             @user = current_user
-            if !params[:content].blank? || !params[:contact].blank? || !params[:rating].blank? #if one of these is not blank, aka filled out
-              @entry.update(category: params[:category], date: params[:date], rating: params[:rating], content: params[:content], contact: params[:contact])
-              @entry.save
+            @entry.update(category: params[:category], date: params[:date], rating: params[:rating], content: params[:content], contact: params[:contact])
+             if @entry.save
               redirect to "/entries/#{@entry.id}"
             else
               redirect to "/entries/edit/#{@entry.id}"

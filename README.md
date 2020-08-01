@@ -9,11 +9,17 @@ This project builds the The Logbook aka The How'd It Go?: a site where a person 
 ## OVERVIEW
 
 This is a full scale Sinatra application that uses:
+
 * SQLITE
+
 * ActiveRecord
+
 * RESTful routes
+
 * Sessions
+
 * Login/Logout
+
 * HTML/CSS
 
 This application implements two classes: Entry and User. A user cannot take any actions outside of signing up, unless they are logged in. While logged in, a user can read, edit, create and delete entries, and then log out.
@@ -25,20 +31,29 @@ Fork and clone this project. Try this app in your local environment.
 
 Run the following commande inside this project's directory.
 
+
     $ bundle install &&
+
     $ rake db:migrate
+
 
     $ rake db:seed (if applicable)
 
+
 Start up local server
+
 
     $ shotgun 
 
+
 For interactive console
 
+
     $ rake console
+    
 
 OR
+
 
     $ tux
 

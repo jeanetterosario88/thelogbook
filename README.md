@@ -32,7 +32,7 @@ Fork and clone this project. Try this app in your local environment.
 Run the following commande inside this project's directory.
 
 
-    $ bundle install &&
+    $ bundle install
 
     $ rake db:migrate
 

@@ -3,7 +3,7 @@ The Logbook aka How'd It Go?
 
 INTRODUCTION
 
-This project builds the The Logbook aka The How'd It Go?: a site where a person can keep track of important interactions such as job interviews, auditions, and networking events. Overall, this application is an efficient tool to jot down an event's type, date, and contacts, and store this information for future reference. A person is also able to rate the event and describe what occurred. 
+This project builds the The Logbook aka The How'd It Go?: a site where a person can keep track of important interactions such as job interviews, auditions, and networking events. Overall, this application is an efficient way to jot down an event's type, date, and contacts, and store this information for future reference. A person is also able to rate the event and describe what occurred. 
 
 
 OVERVIEW

@@ -60,6 +60,7 @@ OR
 ## FUTURE IMPROVEMENTS
 
 * Add confirm password during sign up
+
 * Validate date format to mm/dd/yyyy
 
 

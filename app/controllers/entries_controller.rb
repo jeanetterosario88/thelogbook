@@ -58,7 +58,7 @@ class EntriesController < ApplicationController
         end
       end
   
-    patch "/entries/:id" do #guard this
+    patch "/entries/:id" do
       @entry = Entry.find(params[:id])
           if logged_in?
             @user = current_user

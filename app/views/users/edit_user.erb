@@ -1,19 +1,27 @@
+<h3><%= @user.username %></h3>
+
 <h3> Edit Credentials: </h3>
 
-<h3 style="color:red;">
-<% if flash[:error] %>
+<h3 style="color:blue;">
+<% if flash[:error] == "Success!" %>
 <%= flash[:error] %>
+ Go Back To Your <a href="/entries">ENTRIES</a></h3>
 <% else %>
-<h3 style="color:blue;"> Success! Go Back To Your <a href="/entries">ENTRIES</a></h3>
-<% end %></h2>
+<h3 style="color:red;">
+<%= flash[:error] %>
+<% end %></h3>
 
 <form action='/users/edit_user' method="post">
 <input type="hidden" name="_method" value="patch">
 <h4> 
 
-Username: <input type="text" name="username">
-Email: <input type="text" name="email">
-Password: <input type="text" name="password"><br><br>
+Username: <input type="text" name="username" placeholder="<%=@user.username%>">
+Email: <input type="text" name="email" placeholder="<%=@user.email%>">
+Password: <input type="text" name="password"><br><br><br>
 
 <input type="submit" value="Submit"></h4>
+</form><br><br><br><br>
+
+<form action="/logout" method="post">
+<input type="submit" value= "Logout" name="logout" ><br>
 </form>

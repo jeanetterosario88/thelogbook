@@ -2,6 +2,11 @@
 <html>
 <body>
 
+<h3 style="color:red;">
+<% if flash[:error] %>
+<%= flash[:error] %>
+<% end %></h3>
+
 <h3>Login:</h3>
 
 

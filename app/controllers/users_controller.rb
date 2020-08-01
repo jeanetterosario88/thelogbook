@@ -26,20 +26,23 @@ class UsersController < ApplicationController
       end
 
       get '/users/edit_user' do
+        if logged_in?
+        @user = current_user
         erb :'users/edit_user'
+        else
+        redirect to '/'
+        end
       end
-
+      
       patch '/users/edit_user' do
-        @user = User.find_by(:username => params[:username])
-        # binding.pry
-            if @user && logged_in?
-                @user.update(username: params[:username], email: params[:email], password: params[:password])
-                if @user.save
+        @user = current_user
+        @user.update(username: params[:username], email: params[:email], password: params[:password])
+            if @user.save
+                  flash[:error] = "Success!"
                   redirect to "users/edit_user"
-                else
+            else
                   flash[:error] = @user.errors.full_messages.join(". ")
                   redirect to "users/edit_user"
-                end
             end
         end
 

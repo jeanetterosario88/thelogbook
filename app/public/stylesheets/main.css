@@ -1,2 +1,9 @@
-h4 { color: red; }
-p { color: blue; }
+.container {
+  background-color: grey;
+  border: 5px solid black;
+  color: white;
+  font-family: "Gill Sans";
+  margin: 20px;
+  padding: 25px;
+  text-align: center;
+}

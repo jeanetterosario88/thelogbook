@@ -8,6 +8,13 @@
   text-align: center;
 }
 
+button {
+  border: 0;
+  padding: 10px;
+  font-family: 'Arial';
+  background-color: #f19ad7
+}
+
 #signup {
   text-align: center;
   margin: 0 auto;
@@ -15,5 +22,6 @@
 
 div.signup {
   text-align: center;
-  background-color: black;
+  background-color: rgb(41, 40, 40);
+  padding-bottom: 10px;
 }

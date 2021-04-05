@@ -1,39 +1,49 @@
 <h3 style="color:orange;"> All sections must be filled out. </h3>
-  
-  <form action='/entries' method="post">
-  Category:
-  <input type="text" name="category" placeholder="e.g. Musical Audition"><br>
-  Date: 
-  <input type="text" name="date" placeholder="e.g. 02/09/2015"><br>
-  How Did It Go? (Rate)<br>
+  <div class="user-creds">
+    <form action='/entries' method="post">
+        <table id="user-creds">
+          <tr>
+            <td>Category:</td>
+            <td><input type="text" name="category" placeholder="e.g. Musical Audition"></td>
+          </tr>
+          <tr>
+            <td>Date:</td>
+            <td><input type="text" name="date" placeholder="e.g. 02/09/2015"></tr>
+          </tr>
+          <tr>
+            <td>How Did It Go? (Rate)</td>
+            <td><input type="radio" name="rating" value="1">
+            <label for="1">1</label>
+            <input type="radio" name="rating" value="2">
+            <label for="2">2</label>
+            <input type="radio" name="rating" value="3">
+            <label for="3">3</label>
+            <input type="radio" name="rating" value="4">
+            <label for="4">4</label>
+            <input type="radio" name="rating" value="5">
+            <label for="5">5</label>
+            <input type="radio" name="rating" value="6">
+            <label for="6">6</label>
+            <input type="radio" name="rating" value="7">
+            <label for="7">7</label>
+            <input type="radio" name="rating" value="8">
+            <label for="8">8</label>
+            <input type="radio" name="rating" value="9">
+            <label for="9">9</label>
+            <input type="radio" name="rating" value="10">
+            <label for="10">10</label></td>
+          </tr>
+          <tr>
+            <td>Content: </td>
+            <td><input type="text" name="content" placeholder="e.g. It didn't go so well. I got really nervous, plus my throat was dry. I should really drink more water."></td>
+          </tr>
+          <tr>
+            <td>Contact: </td>
+            <td><input type="text" name="contact"placeholder="e.g. Lin Manuel Miranda was there. Never heard of him."></td>
+          <tr>
+        </table>
+      Create Your Entry: 
+      <button type="submit"> Submit </button>
 
-  <input type="radio" name="rating" value="1">
-  <label for="1">1</label>
-  <input type="radio" name="rating" value="2">
-  <label for="2">2</label>
-  <input type="radio" name="rating" value="3">
-  <label for="3">3</label>
-  <input type="radio" name="rating" value="4">
-  <label for="4">4</label>
-  <input type="radio" name="rating" value="5">
-  <label for="5">5</label>
-  <input type="radio" name="rating" value="6">
-  <label for="6">6</label>
-  <input type="radio" name="rating" value="7">
-  <label for="7">7</label>
-  <input type="radio" name="rating" value="8">
-  <label for="8">8</label>
-  <input type="radio" name="rating" value="9">
-  <label for="9">9</label>
-  <input type="radio" name="rating" value="10">
-  <label for="10">10</label><br>
-
-  Content:
-  <input type="text" name="content" placeholder="e.g. It didn't go so well. I got really nervous, plus my throat was dry. I should really drink more water."><br>
-  Contact:
-  <input type="text" name="contact"placeholder="e.g. Lin Manuel Miranda was there. Never heard of him."><br><br>
-  Create Your Entry: 
-  <input type="submit" id="submit"><br>
-
-
-</form>
+    </form>
+  </div>

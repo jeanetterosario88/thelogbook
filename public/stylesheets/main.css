@@ -1,3 +1,8 @@
+body {
+  background-image: url("/background.jpg") ;
+}
+
+
 .container {
   background-color: grey;
   border: 5px solid black;
@@ -12,15 +17,16 @@ button {
   border: 0;
   padding: 10px;
   font-family: 'Arial';
-  background-color: #f19ad7
+  background-color: rgb(237, 247, 104);
+  cursor: pointer;
 }
 
-#signup {
-  text-align: center;
+#user-creds {
+  text-align: right;
   margin: 0 auto;
 }
 
-div.signup {
+div.user-creds {
   text-align: center;
   background-color: rgb(41, 40, 40);
   padding-bottom: 10px;

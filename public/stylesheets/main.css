@@ -1,10 +1,10 @@
 body {
-  background-image: url("/background.jpg") ;
+  background-image: url("/backgroundconfetti.jpg") ;
 }
 
 
 .container {
-  background-color: grey;
+  background-color: rgba(7, 50, 70, 0.3);
   border: 5px solid black;
   color: white;
   font-family: "Gill Sans";
@@ -17,7 +17,7 @@ button {
   border: 0;
   padding: 10px;
   font-family: 'Arial';
-  background-color: rgb(237, 247, 104);
+  background-color: olivedrab
   cursor: pointer;
 }
 

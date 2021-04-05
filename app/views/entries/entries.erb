@@ -6,8 +6,8 @@
 
     <% @user.entries.each_with_index do |entry, index| %> 	
       <h4>Entry <%= index + 1 %></h4>
-        <div class="entries">
-          <table id="entries">
+        <div class="user-creds">
+          <table id="user-creds">
             <tr>
               <td>Category:</td>
               <td><%=entry.category %></td>

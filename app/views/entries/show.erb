@@ -3,11 +3,28 @@
 <h4>Entry</h4>
 
 <h4>
-  Category: <%= @entry.category %><br>
- Date: <%= @entry.date %><br>
- Rating: <%= @entry.rating %><br>
- Content: <%= @entry.content %><br>
- Contact: <%= @entry.contact %><br><br>
+  <table id="user-creds">
+    <tr>
+        <td>Category:</td> 
+        <td><%= @entry.category %></td>
+    </tr>
+    <tr>
+        <td>Date:</td>
+        <td><%= @entry.date %></td>
+    </tr>
+    <tr>
+        <td>Rating:</td>
+        <td><%= @entry.rating %></td>
+    </tr>
+    <tr>
+      <td>Content:</td>
+      <td><%= @entry.content %></td>
+    </tr>
+    <tr>
+      <td>Contact:</td> 
+      <td><%= @entry.contact %></td>
+    </tr><br>
+  </table>
 
 <a href="/entries/edit/<%=@entry.id%>"><br>Edit</a> or 
 <a href="/entries/delete/<%=@entry.id%>"> Delete</a> <br><br><br>

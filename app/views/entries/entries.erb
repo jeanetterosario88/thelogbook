@@ -1,27 +1,44 @@
-
-
 <h4><a href="users/edit_user">Edit Your Login Credentials: </a><br><%=@user.username%></h4>
 
 <h4><a href="entries/new">Create New Entry</a></h4>
 
 <h3><%=@user.username%> Entries: </h3>
 
- <% @user.entries.each_with_index do |entry, index| %>
-   <h4>Entry <%= index + 1 %></h4>
-   <h5>Category: <%=entry.category%><br>
-    Date: <%=entry.date%><br>
-    Rating: <%=entry.rating%><br>
-    Content: <%=entry.content%><br>
-    Contact: <%=entry.contact%></h5>
-    <h5><a href="entries/edit/<%=entry.id%>">Edit Entry</a><br>
+    <% @user.entries.each_with_index do |entry, index| %> 	
+      <h4>Entry <%= index + 1 %></h4>
+        <div class="entries">
+          <table id="entries">
+            <tr>
+              <td>Category:</td>
+              <td><%=entry.category %></td>
+            </tr> 
+            <tr>
+              <td>Date:</td>
+              <td><%=entry.date %></td>
+            </tr>
+            <tr>
+              <td>Rating:</td>
+              <td><%=entry.rating %></td>
+            </tr>
+            <tr>
+              <td>Content:</td>
+              <td><%=entry.content %></td>
+            </tr>
+            <tr>
+              <td>Contact:</td>
+              <td><%=entry.contact %></td>
+            </tr>
+          </table>
+        </div>
+        <h5><a href="entries/edit/<%=entry.id%>">Edit Entry</a><br>
 
-    <form action="/entries/<%=entry.id%>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <a href="entries/delete/<%=entry.id%>">Delete Entry</a></h5>
-    </form>
- <%end%>
+        <form action="/entries/<%=entry.id%>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <a href="entries/delete/<%=entry.id%>">Delete Entry</a></h5>
+        </form>
+    <%end%>
 <br>
 <br>
 <form action="/logout" method="post">
-<input type="submit" value= "Logout" name="logout" ><br>
+	<input type="submit" value= "Logout" name="logout" ><br>
 </form>

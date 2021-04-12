@@ -43,14 +43,23 @@ div.user-creds {
 /* NAVIGATION STYLES */
 
 nav {
+    overflow: hidden;
     border-bottom: 1px solid black;
-    font-family: "Gill Sans"
-}
+    background-color: rgba(7, 50, 70, 0.3);
+    position: fixed;
+    font-family: "Gill Sans";
+    top: 0;
+    width: 100%;
 
-.crumbs ol {
-    list-style-type: none;
-    padding-left: 0;
-}
+
+    .crumbs a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
 .crumb {
     display: inline-block;

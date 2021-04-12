@@ -7,9 +7,9 @@ a {
     color: black;
 }
 
-/* a:hover {
+a:hover {
     background-color: white;
-}  */
+} 
 
 .container {
   background-color: rgba(7, 50, 70, 0.3);

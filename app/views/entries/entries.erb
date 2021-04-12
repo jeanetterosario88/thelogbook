@@ -1,7 +1,3 @@
-<h4><a href="users/edit_user">Edit Your Login Credentials: </a><br><%=@user.username%></h4>
-
-<h4><a href="entries/new">Create New Entry</a></h4>
-
 <h3><%=@user.username%> Entries: </h3>
 
     <% @user.entries.each_with_index do |entry, index| %> 	

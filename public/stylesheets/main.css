@@ -28,6 +28,6 @@ button {
 
 div.user-creds {
   text-align: center;
-  background-color: rgb(41, 40, 40);
+  background-color: rgb(41, 40, 40, .65);
   padding: 10px;
 }

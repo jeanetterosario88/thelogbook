@@ -2,6 +2,14 @@ body {
   background-image: url("/backgroundconfetti.jpg") ;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background-color: white;
+} 
 
 .container {
   background-color: rgba(7, 50, 70, 0.3);
@@ -13,12 +21,12 @@ body {
   text-align: center;
 }
 
-button {
-  border: 0;
-  padding: 10px;
-  font-family: 'Arial';
-  background-color: olivedrab
-  cursor: pointer;
+.input-button {
+    border: 0;
+    padding: 10px;
+    font-family: 'Arial';
+    background-color: olivedrab;
+    cursor: pointer;
 }
 
 #user-creds {
@@ -28,6 +36,6 @@ button {
 
 div.user-creds {
   text-align: center;
-  background-color: rgb(41, 40, 40, .65);
+  background-color: rgb(41, 40, 40, 0.7);
   padding: 10px;
-}
+} 

@@ -27,6 +27,16 @@ class SessionsController < ApplicationController
  
         end
       end
+      
+      
+      get '/logout' do
+        if !logged_in? #if not logged in
+            erb :'users/login'
+        else
+            redirect to '/login'
+        end
+     end
+
 
     post '/logout' do
         if !logged_in?
